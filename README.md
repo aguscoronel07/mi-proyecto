@@ -1,0 +1,1 @@
+Para incializar, estar parado en "apps/backend" y hacer npm run dev, tambien deje incluido el .env , se que no deberia pero en este entorno de pruebas decidi hacerlo asi, deje comentado algunas cosas que me parecieron necesarias, no llegue a terminar bien el apps/backend/src/controllers/UserControllers, luego deberia hacer que inyecte los use-cases de mi dominio.
