@@ -1,21 +1,24 @@
-//despues lo implemento para consumirlo en el back
+//LUEGO DEBO INYECTAR AL BACK ESTE CODIGO
 
-// import { EncryptService } from "../services/EncryptService";
+// import { IUserRepository } from "../services/UserRepository";
+// import { IEncryptService } from "../services/EncryptService";
 
-// export class AuthenticateUser {
-//   private encryptService = new EncryptService();
+// export class AuthenticateUserUseCase {
+//   constructor(
+//     private userRepository: IUserRepository,
+//     private encryptService: IEncryptService
+//   ) {}
 
-//   async execute(username: string, password: string, storedHash: string) {
-//     const match = await this.encryptService.compare(password, storedHash);
+//   async execute(userId: string, password: string): Promise<string> {
+//     const user = await this.userRepository.findById(userId);
+//     if (!user) throw new Error("Usuario no encontrado");
 
+//     const match = await this.encryptService.compare(password, user.password);
 //     if (!match) throw new Error("Credenciales incorrectas");
 
-//     // Genero el token si coincide
-//     const token = this.encryptService.generateToken({
-//       username,
-//       role: "usuario",
+//     return this.encryptService.generateToken({
+//       userId: user.id,
+//       role: user.role,
 //     });
-
-//     return token;
 //   }
 // }
